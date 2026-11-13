@@ -8,14 +8,18 @@ public class kuis23Nadzar {
         int totalBerat = 0;
         int totalBiaya = 0;
         double tertinggi = 0;
+        int nim2 = 50;
+        int kapasitas = (nim2 % 10) + 10;
 
         for (int i = 1; i <= n; i++) {
             System.out.print("Berat cucian pelanggan ke-" + i + " (kg): ");
             int berat = sc.nextInt();
 
-             if (berat > 20 || berat < 1){
+            if (berat > 20 || berat < 1) {
                 System.out.println("input tidak valid");
-            } 
+
+            
+            }
 
             // Tarif: sampai 3 kg Rp 15000 (flat), lebih dari 3 kg ditambah Rp 4000 per kg
             // kelebihannya
@@ -25,16 +29,17 @@ public class kuis23Nadzar {
             } else {
                 biaya = 15000 + (berat - 3) * 4000;
             }
-             if (biaya > tertinggi) {
+            if (biaya > tertinggi) {
                 tertinggi = biaya;
             }
            
 
-          
-                totalBiaya = 0;
+            totalBiaya = 0;
             totalBiaya += biaya;
             totalBerat += berat;
             System.out.println("  Biaya: Rp " + biaya);
+              
+
         }
 
         double rataBerat = totalBerat / n;
@@ -42,6 +47,6 @@ public class kuis23Nadzar {
         System.out.println("Total pemasukan : Rp " + totalBiaya);
         System.out.println("Rata-rata berat : " + rataBerat + " kg");
         System.out.println("biaya tertinggi :" + tertinggi);
-       
+
     }
 }
